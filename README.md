@@ -4,7 +4,7 @@ A coursework prototype for the AkiraChix DAS Medical Imaging ML Project. This to
 
 > **This is a student coursework project, not a medical device. It has not been clinically validated and must never be used to make or support a real medical decision. It is not safe to use on images outside the type it was trained on (see Limitations below).**
 
----
+-
 
 ## Table of Contents
 
@@ -22,7 +22,7 @@ A coursework prototype for the AkiraChix DAS Medical Imaging ML Project. This to
 12. [Ethical Considerations](#ethical-considerations)
 13. [Troubleshooting](#troubleshooting)
 
----
+-
 
 ## What This Project Does
 
@@ -44,7 +44,7 @@ The goal is to demonstrate a working, end-to-end medical image segmentation pipe
 
 ## Dataset
 
-- **Source:** [ISIC 2016 Challenge, Task 1 — Lesion Segmentation](https://challenge.isic-archive.com/data/#2016)
+- **Source:** [ISIC 2016 Challenge, Task 1  Lesion Segmentation](https://challenge.isic-archive.com/data/#2016)
 - **License:** CC-0 (public domain)
 - **Training data:** 900 dermoscopic JPEG images with matching binary PNG ground-truth masks (expert-annotated lesion boundaries)
 - **Test data:** 379 dermoscopic JPEG images with matching binary PNG ground-truth masks, held out and never used during training
@@ -66,7 +66,7 @@ The goal is to demonstrate a working, end-to-end medical image segmentation pipe
 Evaluated on the 379-image held-out test set:
 
 | Metric | Score |
-|---|---|
+|-|-|
 | Mean Dice score | 0.884 |
 | Mean IoU score | 0.810 |
 
@@ -145,7 +145,7 @@ This exact pipeline is used both during model training and inside the app, and m
 - **Training data scope:** The model was trained only on the ISIC 2016 dataset dermoscope-captured images from a specific set of clinical sources. Performance on images captured with different equipment, lighting, skin tones, or populations not represented in this dataset is untested and likely worse.
 - **Small dataset size:** With only 900 training images, the model has limited exposure to rare or unusual lesion presentations.
 - **Hair and obstruction sensitivity:** The model can occasionally misidentify dense hair coverage as lesion-like boundary features, producing small false-positive regions.
-- **Not validated for clinical use:** This model has no mechanism for detecting malignancy or clinical significance — it only outlines a boundary shape it has learned from pixel patterns.
+- **Not validated for clinical use:** This model has no mechanism for detecting malignancy or clinical significance it only outlines a boundary shape it has learned from pixel patterns.
 - **Small-mask metric instability:** Dice score, the primary evaluation metric used, becomes less reliable and can swing sharply for images with very small true lesion areas.
 
 ## Ethical Considerations
